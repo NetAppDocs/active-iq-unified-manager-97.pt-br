@@ -1,0 +1,47 @@
+---
+permalink: online-help/concept-monitoring-vmware-virtual-infrastructure.html 
+sidebar: sidebar 
+keywords:  
+summary: O Active IQ Unified Manager fornece visibilidade das máquinas virtuais implantadas em um datastore e permite monitorar e solucionar problemas de storage e desempenho em um ambiente virtual. Você pode usar esse recurso para determinar quaisquer problemas de latência no ambiente de storage ou quando houver um evento de performance relatado no vCenter. 
+---
+= Monitoramento da infraestrutura virtual VMware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Active IQ Unified Manager fornece visibilidade às máquinas virtuais (VMs) implantadas em um armazenamento de dados e permite monitorar e solucionar problemas de storage e desempenho em um ambiente virtual. Você pode usar esse recurso para determinar quaisquer problemas de latência no ambiente de storage ou quando houver um evento de performance relatado no vCenter.
+
+Uma implantação típica de infraestrutura virtual no ONTAP tem vários componentes espalhados pelas camadas de computação, rede e storage. Qualquer atraso de desempenho em uma aplicação de VM pode ocorrer devido a uma combinação de latências enfrentadas pelos vários componentes nas respetivas camadas. Esse recurso é útil para administradores de storage e vCenter e GENERALISTAS DE TI que precisam analisar um problema de performance em um ambiente virtual e entender em que componente o problema ocorreu.
+
+O Unified Manager apresenta o subsistema subjacente de um ambiente virtual em uma visualização topológica para determinar se ocorreu um problema de latência no nó de computação, na rede ou no storage. A visualização também destaca o objeto específico que causa o atraso de desempenho para tomar medidas corretivas e solucionar o problema subjacente.
+
+A infraestrutura virtual implantada no storage ONTAP inclui os seguintes objetos:
+
+* Datastore: Datastores são objetos de armazenamento virtual conetados aos hosts das VMs. Armazenamentos de dados são entidades de storage gerenciáveis do ONTAP, como LUNs ou volumes, usadas como um repositório para arquivos de VM, como arquivos de log, scripts, arquivos de configuração e discos virtuais. Eles são conetados aos hosts no ambiente por meio de uma conexão de rede SAN ou IP. Armazenamentos de dados fora do ONTAP mapeados para o vCenter não são suportados nem exibidos no Unified Manager.
+* Host: Um sistema físico ou virtual que executa o ESXi, o software de virtualização da VMware e hospeda a VM.
+* VCenter: Um plano de controle centralizado para gerenciar as VMs VMware, os hosts ESXi e todos os componentes relacionados em um ambiente virtual. Para obter mais informações sobre o vCenter, consulte a documentação da VMware.
+* Discos virtuais: Os discos virtuais no host que têm uma extensão como VMDK. Os dados de um disco virtual são armazenados no VMDK correspondente.
+* VM: Uma máquina virtual VMware.
+* VMDK: Um disco de máquina virtual no datastore que fornece espaço de armazenamento para discos virtuais. Para cada disco virtual, há um VMDK correspondente.
+
+
+Esses objetos são representados em uma visualização de topologia de VM.
+
+*Virtualização VMware no ONTAP* image:../media/vm-deployment.gif[""]
+
+*Fluxo de trabalho do usuário*
+
+O diagrama a seguir exibe um caso de uso típico do uso da exibição de topologia da VM:
+
+image::../media/vm-workflow.gif[fluxo de trabalho da vm]
+
+
+
+== O que não é abordado
+
+* Armazenamentos de dados que estão fora do ONTAP e são mapeados para as instâncias do vCenter não são compatíveis com o Unified Manager. Quaisquer VMs com discos virtuais nesses datastores também não são suportadas.
+* Somente volumes nas e SAN são compatíveis como datastores, os volumes virtuais (vVoLs) não são suportados.
+* As vistas não permitem gerar relatórios para analisar o desempenho dos vários componentes
+

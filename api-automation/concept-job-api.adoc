@@ -1,0 +1,38 @@
+---
+permalink: api-automation/concept-job-api.html 
+sidebar: sidebar 
+keywords:  
+summary: No Active IQ Unified Manager, operações como adicionar e modificar recursos são executadas por invocações de API síncronas e assíncronas. As invocações agendadas para execução assíncrona podem ser rastreadas por um objeto Job criado para essa invocação. Cada objeto trabalho tem uma chave exclusiva para identificação. Cada objeto Job retorna o URI de objeto Job para você acessar e acompanhar o andamento do trabalho. Você pode usar essa API para recuperar os detalhes de cada execução. 
+---
+= Exibindo trabalhos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+No Active IQ Unified Manager, operações como adicionar e modificar recursos são executadas por invocações de API síncronas e assíncronas. As invocações agendadas para execução assíncrona podem ser rastreadas por um objeto Job criado para essa invocação. Cada objeto trabalho tem uma chave exclusiva para identificação. Cada objeto Job retorna o URI de objeto Job para você acessar e acompanhar o andamento do trabalho. Você pode usar essa API para recuperar os detalhes de cada execução.
+
+Você pode consultar todos os objetos trabalho. Você também pode usar a chave de tarefa e os detalhes do objeto de tarefa para executar o próximo conjunto de operações nos recursos.
+
+
+
+== Ver trabalhos
+
+Pode utilizar este método para obter uma lista de todos os trabalhos. O corpo da resposta consiste nos detalhes do trabalho de todos os trabalhos. Você também pode exibir os detalhes de um objeto Job específico especificando a chave Job no URI. O corpo da resposta consiste nos detalhes identificados pela chave de trabalho. Na resposta, o objeto trabalho mais recente é retornado ao topo. Se pretender consultar um objeto de trabalho específico, introduza a ID de trabalho do trabalho.
+
+[cols="1a,1a,1a"]
+|===
+| Categoria | Verbo HTTP | Caminho 
+
+
+ a| 
+servidor de gerenciamento
+ a| 
+OBTER
+ a| 
+`/management-server/jobs`
+
+`+/management-server/jobs/{key}+`
+
+|===

@@ -1,0 +1,52 @@
+---
+permalink: online-help/concept-what-options-do-i-have-when-i-see-the-fix-it-button.html 
+sidebar: sidebar 
+keywords: fix it 
+summary: O botão corrigir permite corrigir um problema sobre o qual o Unified Manager foi notificado por meio de um evento. 
+---
+= Que opções tenho quando vejo o botão Fix it
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O botão *Fix it* permite corrigir um problema que o Unified Manager foi notificado por meio de um evento.
+
+Recomendamos que você clique no botão *Fix it* para corrigir o problema quando ele estiver disponível. No entanto, se você não tiver certeza de que deseja resolver o problema conforme recomendado pelo Unified Manager, poderá executar as seguintes ações:
+
+[cols="1a,1a"]
+|===
+| O que você quer fazer? | Ação 
+
+
+ a| 
+Peça ao Unified Manager para corrigir o problema.
+ a| 
+Clique no botão *Fix it*.
+
+
+
+ a| 
+Não corrija o problema no momento e oculte essa ação de gerenciamento.
+ a| 
+Clique na seta para baixo e clique em *Descartar*.
+
+
+
+ a| 
+Exiba os detalhes deste evento para que você possa entender melhor o problema.
+ a| 
+Clique na seta para baixo e clique em *Exibir detalhes do evento* para exibir a página de detalhes do evento.
+
+
+
+ a| 
+Exiba os detalhes desse objeto de armazenamento para que você possa entender melhor o problema.
+ a| 
+Clique no nome do objeto de armazenamento para exibir detalhes na página Performance Explorer ou Health Details.
+
+|===
+Antes de clicar no botão *Fix it*, você deve fazer uma anotação do nome do objeto (por exemplo, "'cluster fas8040-206" ou "'volume phil_DB"") para que você possa verificar a lista de eventos mais tarde para verificar se o evento correspondente está no estado Obsolete - o que significa que a correção foi bem-sucedida.
+
+Em alguns casos, a correção é refletida na próxima sondagem de configuração de 15 minutos. Em outros casos, pode levar até 24 horas para que a alteração de configuração seja verificada e para que o evento seja obsoleto.

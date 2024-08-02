@@ -1,0 +1,24 @@
+---
+permalink: reporting/concept-understanding-reports.html 
+sidebar: sidebar 
+keywords:  
+summary: Os relatórios exibem informações detalhadas sobre armazenamento, rede, qualidade de serviço e relacionamentos de proteção, ajudando você a identificar e resolver possíveis problemas antes que eles ocorram. 
+---
+= Entendendo relatórios
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Os relatórios exibem informações detalhadas sobre armazenamento, rede, qualidade de serviço e relacionamentos de proteção, ajudando você a identificar e resolver possíveis problemas antes que eles ocorram.
+
+Você pode baixar relatórios como arquivos PDF ou CSV (valores separados por vírgula). Quando você personaliza uma exibição, você pode salvá-la com um nome exclusivo para uso futuro. Você também pode agendar um relatório com base nessa visualização para ser executado regularmente e compartilhá-lo com outras pessoas.
+
+Você pode gerenciar todos os relatórios que foram agendados na página Agenda de relatórios.
+
+[NOTE]
+====
+Você deve ter a função Administrador de aplicativos ou Administrador de armazenamento para gerenciar relatórios.
+
+====

@@ -1,0 +1,63 @@
+---
+permalink: online-help/reference-what-ontap-issues-can-unified-manager-fix.html 
+sidebar: sidebar 
+keywords: fix it 
+summary: Esta tabela descreve os problemas do ONTAP que o Unified Manager pode resolver diretamente a partir da interface de usuário do Unified Manager clicando no botão corrigir. 
+---
+= Quais problemas do ONTAP podem corrigir
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta tabela descreve os problemas do ONTAP que o Unified Manager pode resolver diretamente a partir da interface de usuário do Unified Manager clicando no botão *Fix it*.
+
+[cols="1a,1a,1a"]
+|===
+| Nome e Descrição do evento | Ação de Gestão | Operação "Fix it" 
+
+
+ a| 
+Volume espaço cheio
+
+Indica que o volume está quase fora do espaço e que violou o limite máximo de capacidade. Este limite é definido por padrão para 90% do tamanho do volume.
+ a| 
+Ativar volume com crescimento automático
+ a| 
+O Unified Manager determina que o volume com crescimento automático não está configurado para esse volume, portanto, ativa esse recurso para que o volume cresça ou diminua de tamanho em resposta à quantidade de espaço usado.
+
+
+
+ a| 
+A opção Cf.Takeover.ON_PANIC está configurada como DESLIGADA
+
+A opção nodeshell "'cf.Takeover.on_panic'" está definida como *Off*, o que pode causar um problema em sistemas configurados pelo HA.
+ a| 
+Ativar a aquisição em pânico
+ a| 
+O Unified Manager envia o comando apropriado ao cluster para alterar essa configuração para *ON*.
+
+
+
+ a| 
+Desative a opção nodeshell SnapMirror.enable
+
+A antiga opção nodeshell "'SnapMirror.enable'" está definida como *ON*, o que pode causar um problema durante a inicialização após a atualização para o ONTAP 9 .3 ou superior.
+ a| 
+Defina a opção SnapMirror.enable (Ativar) como Off (Desligado)
+ a| 
+O Unified Manager envia o comando apropriado ao cluster para alterar essa configuração para *Off*.
+
+
+
+ a| 
+Telnet ativado
+
+Indica um potencial problema de segurança porque o Telnet é inseguro e passa dados de maneira não criptografada.
+ a| 
+Desativar o Telnet
+ a| 
+O Unified Manager envia o seguinte comando ao cluster para desativar o Telnet: `security protocol modify -application telnet -enabled false`
+
+|===

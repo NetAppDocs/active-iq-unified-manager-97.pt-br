@@ -1,0 +1,50 @@
+---
+permalink: install-windows/task-upgrading-mysql-on-windows-ocum.html 
+sidebar: sidebar 
+keywords: Active IQ Unified Manager 
+summary: No servidor Windows no qual o Unified Manager está instalado, você pode atualizar o MySQL para uma versão superior para obter correções para vulnerabilidades de segurança. Para qualquer atualização menor, a versão base do MySQL deve ser 8.0.17 ou posterior. Se a versão instalada do MySQL no seu sistema for anterior à 8,0.17, o processo de atualização do Unified Manager 9,7 atualiza automaticamente o MySQL para 8,0.17. Você não deve executar uma atualização autônoma do MySQL de uma versão anterior para 8,0.17. 
+---
+= Atualizando o MySQL
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+No servidor Windows no qual o Unified Manager está instalado, você pode atualizar o MySQL para uma versão superior para obter correções para vulnerabilidades de segurança. Para qualquer atualização menor, a versão base do MySQL deve ser 8.0.17 ou posterior. Se a versão instalada do MySQL no seu sistema for anterior à 8,0.17, o processo de atualização do Unified Manager 9,7 atualiza automaticamente o MySQL para 8,0.17. Você não deve executar uma atualização autônoma do MySQL de uma versão anterior para 8,0.17.
+
+
+
+== Antes de começar
+
+[NOTE]
+====
+Se a versão instalada do MySQL no seu sistema é 5,7, então você não deve tentar atualizar diretamente o MySQL para a versão 8,0.17. Isso resulta em perda de dados da aplicação.
+
+====
+* Você deve ter o Privileges de administrador do Windows para o sistema no qual o Unified Manager está instalado.
+* Você deve ter a senha para o usuário root MySQL.
+
+
+
+
+== Passos
+
+. Faça login como usuário admin na máquina host do Unified Manager.
+. Baixe a versão apropriada do MySQL para o sistema de destino.
+. Use o console dos Serviços do Windows para interromper os seguintes serviços do Unified Manager:
++
+** Serviço de aquisição da NetApp Active IQ (Ocie-au)
+** Serviço de servidor de gerenciamento NetApp Active IQ (Oncommandsvc)
+** MYSQL8
+
+
+. Clique no `.msi` pacote para chamar a atualização do MySQL e siga as instruções na tela para concluir a atualização.
+. Inicie os serviços do Unified Manager usando o console dos Serviços do Windows:
++
+** MYSQL8
+** Serviço de servidor de gerenciamento NetApp Active IQ (Oncommandsvc)
+** Serviço de aquisição da NetApp Active IQ (Ocie-au)
+
+
+

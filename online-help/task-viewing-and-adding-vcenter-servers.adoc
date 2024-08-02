@@ -1,0 +1,78 @@
+---
+permalink: online-help/task-viewing-and-adding-vcenter-servers.html 
+sidebar: sidebar 
+keywords: vCenter server 
+summary: Para visualizar e solucionar problemas do desempenho das máquinas virtuais, os vCenters associados devem ser adicionados à sua instância do Active IQ Unified Manager. 
+---
+= Visualização e adição de servidores vCenter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para visualizar e solucionar problemas do desempenho das máquinas virtuais (VMs), os vCenters associados devem ser adicionados à sua instância do Active IQ Unified Manager.
+
+
+
+== Antes de começar
+
+Antes de adicionar ou visualizar os vCenters, certifique-se de que:
+
+* Você está ciente dos nomes do vCenter.
+* Os vCenters são acessíveis para uma descoberta bem-sucedida.
+* Você conhece o endereço IP e tem as credenciais ao adicionar o vCenter. As credenciais devem ser de um administrador do vCenter ou de um usuário raiz com acesso somente leitura ao vCenter.
+* O vCenter que você deseja adicionar executa o vSphere 6,5 ou posterior.
+* A configuração de coleta de dados no servidor vCenter é definida para o nível 3 para o intervalo de 5 minutos
+* Os valores de latência no vCenter são configurados em milissegundos, e não em microssegundos, para cálculos bem-sucedidos dos valores de latência.
+* A hora do vCenter pertence ao fuso horário do vCenter.
+
+
+
+
+== Sobre esta tarefa
+
+Para cada vCenter adicionado e descoberto, o Unified Manager coleta os dados de configuração, como os detalhes do servidor vCenter e ESXi, o mapeamento do ONTAP, os detalhes do datastore e o número de VMs hospedadas. Ele coleta ainda mais as métricas de desempenho dos componentes.
+
+
+
+== Passos
+
+. Vá para *VMware* > *vCenter* e verifique se o vCenter está disponível na lista.
++
+[NOTE]
+====
+Se o vCenter não estiver disponível, você deverá adicionar o vCenter.
+
+====
++
+.. Clique em *Add*.
+.. Adicione o endereço IP correto para o vCenter e verifique se o dispositivo está acessível.
+.. Adicione o nome de usuário e a senha do administrador ou usuário raiz com acesso somente leitura ao vCenter.
+.. Adicione o número da porta personalizada se estiver usando qualquer outra porta que não a padrão `443`.
+.. Clique em *Salvar*. Após a descoberta bem-sucedida, um certificado de servidor é exibido para você aceitar.
++
+Quando você aceita o certificado, o vCenter é adicionado à lista de vCenters disponíveis. A adição do dispositivo não resulta na coleta de dados para as VMs associadas, e a coleta ocorre nos intervalos programados.
+
+
+
+. Se o vCenter estiver disponível na página *vCenters*, verifique seu status. Passar o Mouse sobre o campo *Status* mostra se o vCenter está funcionando conforme esperado ou se há um aviso ou erro.
++
+[NOTE]
+====
+A adição do vCenter permite exibir os seguintes status. No entanto, os dados de performance e latência das VMs correspondentes podem levar até uma hora depois de adicionar o vCenter para serem refletidos com precisão.
+
+====
++
+** Verde: Normal, indicando que o vCenter foi descoberto e as métricas de desempenho foram coletadas com sucesso
+** Amarelo: Aviso (por exemplo, quando o nível de estatísticas para o servidor vCenter não foi definido como 3 ou superior para obter estatísticas para cada objeto)
+** Laranja: Erro (indica quaisquer erros internos, como exceção, falha na coleta de dados de configuração ou o vCenter não está acessível) você pode clicar no ícone de exibição de coluna (*Mostrar/Ocultar*) para exibir a mensagem de status de um status do vCenter e solucionar o problema.
+
+
+. Caso o vCenter esteja inacessível ou as credenciais tenham sido alteradas, edite os detalhes do vCenter. Selecione o vCenter e clique em *Editar*.
+. Faça as alterações necessárias na página *Editar VMware vCenter Server*.
+. Clique em *Salvar*.
++
+Após a descoberta bem-sucedida, o status do vCenter muda.
+
+

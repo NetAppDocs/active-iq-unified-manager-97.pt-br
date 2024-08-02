@@ -1,0 +1,84 @@
+---
+permalink: online-help/concept-managing-storage-efficiency-policies.html 
+sidebar: sidebar 
+keywords: add 
+summary: 'Uma Política de eficiência de armazenamento (SEP) permite definir as caraterísticas de eficiência de armazenamento de uma carga de trabalho. Você pode atribuir uma Política de eficiência de storage a uma carga de trabalho ao criar inicialmente a carga de trabalho ou depois editar a carga de trabalho.' 
+---
+= Gerenciamento de políticas de eficiência de storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Uma Política de eficiência de storage (SEP) permite definir as características de eficiência de storage de um workload. Você pode atribuir uma Política de eficiência de storage a uma carga de trabalho ao criar inicialmente a carga de trabalho ou depois editar a carga de trabalho.
+
+A eficiência de storage inclui tecnologias como thin Provisioning, deduplicação e compressão de dados que aumentam a utilização do storage e diminuem os custos de storage. Ao criar políticas de eficiência de storage, você pode usar essas tecnologias de economia de espaço individualmente ou em conjunto para alcançar a máxima eficiência de storage. Quando você associa as políticas aos workloads de storage, as configurações de política especificadas são atribuídas a elas. Com o Unified Manager, você atribui políticas de eficiência de storage definidas pelo sistema e pelo usuário para otimizar os recursos de storage em seu data center.
+
+O Unified Manager fornece duas políticas de eficiência de storage definidas pelo sistema: Alta e baixa. Esses SEPs são aplicáveis à maioria das cargas de trabalho de storage em um data center. No entanto, você pode criar suas próprias políticas se os SEPs definidos pelo sistema não atenderem aos seus requisitos.
+
+Não é possível modificar uma Política de eficiência de storage definida pelo sistema ou atribuída atualmente a uma carga de trabalho. Não é possível excluir uma Política de eficiência de storage atribuída a uma carga de trabalho ou se ela for a única Política de eficiência de storage disponível.
+
+A página políticas de eficiência de armazenamento lista as políticas de eficiência de armazenamento disponíveis e permite adicionar, editar e excluir SEPs personalizados. Esta página exibe as seguintes informações:
+
+[cols="1a,1a"]
+|===
+| Campo | Descrição 
+
+
+ a| 
+Nome
+ a| 
+Nome da Política de eficiência de storage.
+
+
+
+ a| 
+Tipo
+ a| 
+Se a política é definida pelo sistema ou definida pelo usuário.
+
+
+
+ a| 
+Reserva de espaço
+ a| 
+Se o volume é de thin Provisioning ou de thin Provisioning.
+
+
+
+ a| 
+Deduplicação
+ a| 
+Se a deduplicação está ativada no volume:
+
+* `Inline`: A deduplicação ocorre enquanto está sendo gravada no volume
+* `Background`: A deduplicação ocorre em segundo plano
+* `Disable`: A deduplicação está desativada no volume
+
+
+
+
+ a| 
+Compactação
+ a| 
+Se a compressão de dados está ativada no volume:
+
+* `Inline`: A compactação de dados ocorre enquanto está sendo gravada no volume
+* `Background`: A compressão de dados ocorre em segundo plano
+* `Disable`: A compressão de dados está desativada no volume
+
+
+
+
+ a| 
+Workloads
+ a| 
+Número de workloads de storage que foram atribuídos à Política de eficiência de storage
+
+|===
+
+
+== Diretrizes para criar uma política de eficiência de storage personalizada
+
+Se as políticas de eficiência de storage existentes não atenderem aos requisitos de política para seus workloads de storage, você poderá criar uma Política de eficiência de storage personalizada. No entanto, é recomendável que você tente usar as políticas de eficiência de storage definidas pelo sistema para seus workloads de storage e apenas crie políticas de eficiência de storage personalizadas, se necessário.

@@ -1,0 +1,22 @@
+---
+permalink: install-linux/concept-browser-and-platform-requirements.html 
+sidebar: sidebar 
+keywords:  
+summary: Para acessar a IU do Unified Manager, você deve usar um navegador compatível. 
+---
+= Navegadores suportados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para acessar a IU do Unified Manager, você deve usar um navegador compatível.
+
+Consulte a Matriz de interoperabilidade para obter a lista de versões de navegador suportadas.
+
+http://mysupport.netapp.com/matrix["mysupport.NetApp.com/matrix"]
+
+Para todos os navegadores, desativar os bloqueadores popup ajuda a garantir que os recursos do software sejam exibidos corretamente.
+
+Se você planeja configurar o Unified Manager para autenticação SAML, para que um provedor de identidade (IDP) possa autenticar usuários, verifique também a lista de navegadores suportados pelo IDP.

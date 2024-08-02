@@ -1,0 +1,58 @@
+---
+permalink: reporting/task-scheduling-a-report.html 
+sidebar: sidebar 
+keywords: sample report schedule 
+summary: Depois de ter uma exibição que você deseja agendar para geração e distribuição regulares como um relatório, você pode agendar o relatório. 
+---
+= Agendar um relatório
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depois de ter uma exibição que você deseja agendar para geração e distribuição regulares como um relatório, você pode agendar o relatório.
+
+
+
+== Antes de começar
+
+* Tem de ter a função Administrador de aplicações ou Administrador de armazenamento.
+* Você deve ter configurado as configurações do servidor SMTP na página *Geral* > *notificações* para que o mecanismo de relatórios possa enviar relatórios como anexos de e-mail para a lista de destinatários do servidor Unified Manager.
+* O servidor de e-mail deve estar configurado para permitir que anexos sejam enviados com os e-mails gerados.
+
+
+
+
+== Sobre esta tarefa
+
+Use as etapas a seguir para testar e agendar um relatório a ser gerado para uma exibição. Selecione ou personalize a vista que pretende utilizar. O procedimento a seguir usa uma exibição de rede que mostra o desempenho de suas interfaces de rede, mas você pode usar qualquer exibição desejada.
+
+
+
+== Passos
+
+. Abra a vista. Este exemplo usa a exibição de rede padrão que mostra o desempenho de LIF. No painel de navegação à esquerda, clique em **rede** > *interfaces de rede*.
+. Personalize a vista conforme necessário.
+. Depois de personalizar a exibição, você pode fornecer um nome exclusivo no campo *Exibir* e clicar na marca de seleção para salvá-la.
++
+image::../media/view-save.gif[ver guardar]
+
+. Faça o download do relatório como um arquivo * CSV* ou * PDF* para ver a saída antes de programá-lo ou compartilhá-lo.
++
+Abra o arquivo com um aplicativo instalado, como Microsoft Excel (CSV) ou Adobe Acrobat (PDF).
+
+. Se estiver satisfeito com o relatório, clique em *relatórios programados*.
+. Na página *horários de relatórios*, clique em *Adicionar programação*.
+. Aceite o nome padrão, que é uma combinação do nome da vista e da frequência, ou personalize o *nome da programação*.
+. Para testar o relatório agendado pela primeira vez, adicione-se apenas como *destinatário*. Quando estiver satisfeito, adicione os endereços de e-mail para todos os destinatários do relatório.
+. Especifique a frequência, *diária* ou *semanal*, e o dia, se semanal, e a hora que você deseja que o relatório seja gerado e distribuído aos destinatários.
+. Selecione o formato *PDF* ou *CSV*.
+. Clique na marca de verificação para guardar a agenda do relatório.
++
+image::../media/scheduled-reports.gif[relatórios programados]
+
++
+O relatório é enviado imediatamente como um teste. Depois disso, o relatório gera e é enviado por e-mail para os destinatários listados usando a frequência especificada.
+
+

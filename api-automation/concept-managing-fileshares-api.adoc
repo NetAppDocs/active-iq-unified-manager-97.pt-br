@@ -1,0 +1,107 @@
+---
+permalink: api-automation/concept-managing-fileshares-api.html 
+sidebar: sidebar 
+keywords:  
+summary: Você pode usar as APIs listadas aqui para exibir, adicionar e excluir compartilhamentos de arquivos CIFS e NFS. Usando essas APIs, você também pode atribuir e modificar as políticas de nível de Serviço de Performance e eficiência de storage para os compartilhamentos de arquivos. 
+---
+= Gerenciamento de compartilhamentos de arquivos
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar as APIs listadas aqui para exibir, adicionar e excluir compartilhamentos de arquivos CIFS e NFS. Usando essas APIs, você também pode atribuir e modificar as políticas de nível de Serviço de Performance e eficiência de storage para os compartilhamentos de arquivos.
+
+Antes de atribuir o armazenamento, a máquina virtual deve ter sido criada e provisionada com os protocolos suportados. Da mesma forma, para atribuir políticas de eficiência de storage aos compartilhamentos de arquivos, as políticas de eficiência de storage precisam ser criadas antes de criar os compartilhamentos de arquivos.
+
+
+
+== Ver compartilhamentos de arquivo
+
+Use o método a seguir para visualizar todos os workloads de storage disponíveis no ambiente do Unified Manager. Quando você adicionou um cluster do ONTAP como fonte de dados no Active IQ Unified Manager, as cargas de trabalho de storage desses clusters são adicionadas automaticamente à instância do Unified Manager. Essa API recupera todos os compartilhamentos de arquivo adicionados automaticamente e manualmente à instância do Unified Manager. Você pode exibir os detalhes de um compartilhamento de arquivos específico executando essa API com a chave de compartilhamento de arquivos.
+
+[cols="1a,1a,1a"]
+|===
+| Categoria | Verbo HTTP | Caminho 
+
+
+ a| 
+fornecedor de storage
+ a| 
+OBTER
+ a| 
+`/storage-provider/file-shares`
+
+`+/storage-provider/file-shares/{key}+`
+
+|===
+
+
+== Adicionar compartilhamentos de arquivo
+
+Use o método a seguir para adicionar compartilhamentos de arquivos CIFS e NFS no SVM. Você deve inserir os detalhes do compartilhamento de arquivo que deseja criar, como os parâmetros de entrada. Você não pode usar esta API para criar FlexGroups.
+
+[cols="1a,1a,1a"]
+|===
+| Categoria | Verbo HTTP | Caminho 
+
+
+ a| 
+fornecedor de storage
+ a| 
+POST
+ a| 
+`/storage-provider/file-shares`
+
+|===
+[NOTE]
+====
+Dependendo se os parâmetros da lista de controle de acesso (ACL) ou os parâmetros da política de exportação são fornecidos, compartilhamentos CIFS ou compartilhamentos de arquivos NFS são criados. Se você não fornecer os valores para os parâmetros ACL, compartilhamentos CIFS não serão criados e compartilhamentos NFS serão criados por padrão, fornecendo acesso a todos.
+
+====
+
+
+== Excluir compartilhamentos de arquivo
+
+Você pode usar o seguinte método para excluir um compartilhamento de arquivo específico. Você precisa inserir a chave de compartilhamento de arquivo como um parâmetro de entrada para excluir um compartilhamento de arquivo específico.
+
+[cols="1a,1a,1a"]
+|===
+| Categoria | Verbo HTTP | Caminho 
+
+
+ a| 
+fornecedor de storage
+ a| 
+ELIMINAR
+ a| 
+`+/storage-provider/file-shares/{key}+`
+
+|===
+
+
+== Modificar compartilhamentos de arquivo
+
+Você pode usar o seguinte método para modificar um compartilhamento de arquivo e atualizar suas propriedades.
+
+Você precisa fornecer a chave de compartilhamento de arquivo para modificar um compartilhamento de arquivo específico. Além disso, você precisa inserir a propriedade que deseja atualizar, juntamente com seu valor.
+
+[NOTE]
+====
+Observe que você pode atualizar apenas uma propriedade em uma única invocação desta API. Para várias atualizações, você precisa executar essa API quantas vezes.
+
+====
+[cols="1a,1a,1a"]
+|===
+| Categoria | Verbo HTTP | Caminho 
+
+
+ a| 
+fornecedor de storage
+ a| 
+PATCH
+ a| 
+`+/storage-provider/file-shares/{key}+`
+
+|===
