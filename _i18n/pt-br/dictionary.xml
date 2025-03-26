@@ -12384,7 +12384,6 @@
   <block id="d988ab7e26bb578386298df1e05db999" category="doc">Ordenar dados</block>
   <block id="26d135e1d84c077d3eea6f6660ba8e61" category="list-text">Clique na parte superior de uma coluna para classificar os resultados para que as informações mais importantes sejam exibidas na parte superior da exibição.</block>
   <block id="f35b15966925f799d1c13674cc8bff50" category="sidebar">Com o Active IQ Unified Manager (Unified Manager e anteriormente OnCommand Unified Manager), você monitora e gerencia a integridade e a performance dos sistemas de storage da ONTAP em uma única interface. Esta biblioteca de documentação inclui informações para a versão 9,7.</block>
-  <block id="4a58c6ba2ac7cf0f2cd001d223b14e50" category="sidebar">Documentação do Active IQ Unified Manager</block>
   <block id="91d9102f2b20d2487525cb47bf7d79a5" category="sidebar">Documentação para Active IQ Unified Manager, documentos AIQUM, UM docs</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">Comece agora</block>
   <block id="54cee202b784163d7cdf325cdd6aa6c6" category="sidebar">Instalação rápida do VMware vSphere</block>
@@ -12478,4 +12477,5 @@
   <block id="a5f9c0660ea467c7c86afc1f051b7386" category="sidebar">Análise de eventos a partir de limites dinâmicos de desempenho (desempenho do cluster)</block>
   <block id="78ad073c3d86b8f6327c6e3f8b6530e4" category="sidebar">Análise de eventos de desempenho para uma configuração MetroCluster (desempenho do cluster)</block>
   <block id="8b00815fc5298212e3dc28a279ed4a10" category="sidebar">Gerar relatórios personalizados</block>
+  <block id="dd5452c4b1a9b73792ee149d9b8c4bd0" category="sidebar">Documentação do Active IQ Unified Manager 9,7</block>
 </blocks>
